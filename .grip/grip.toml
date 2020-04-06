@@ -1,0 +1,32 @@
+name="atcf_hardware_bbc"
+configs=["all"]
+default_config="all"
+base_repos=["grip","atcf_hardware"]
+workflow="single"
+doc="""
+This repository is for building, testing and running the BBC microcomputer implementation in CDL
+
+It requires a CDL tools directory configured with at least CDL
+"""
+
+[config.all]
+repos=["atcf_fpga"]
+
+[repo.atcf_hardware]
+url="https://github.com/atthecodeface/cdl_hardware.git"
+branch="master"
+path="atcf_hardware"
+workflow="single"
+
+[repo.atcf_fpga]
+url="https://github.com/atthecodeface/quartus.git"
+branch="master"
+path="atcf_fpga"
+workflow="single"
+
+[repo.grip]
+url="https://github.com/atthecodeface/grip.git"
+branch="master"
+path="grip"
+workflow="readonly"
+
