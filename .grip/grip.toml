@@ -3,11 +3,14 @@ configs=["all"]
 default_config="all"
 base_repos=["grip","atcf_hardware"]
 workflow="single"
+stages=["configure", "build_sim", "build_verilog"]
 doc="""
 This repository is for building, testing and running the BBC microcomputer implementation in CDL
 
-It requires a CDL tools directory configured with at least CDL
+It requires ATCF_CDL_TOOLS_PATH to point to an ATCF CDL tools grip directory configured with at least CDL.
 """
+[env]
+PATH="@ATCF_CDL_TOOLS_PATH@/cdl/build:@ATCF_CDL_TOOLS_PATH@/tools/bin:@GRIP_ROOT_PATH@/grip:@PATH@"
 
 [config.all]
 repos=["atcf_fpga"]
@@ -17,6 +20,9 @@ url="https://github.com/atthecodeface/cdl_hardware.git"
 branch="master"
 path="atcf_hardware"
 workflow="single"
+configure={exec="autoconf && ./configure"}
+build_sim={exec="make -j8"}
+build_verilog={exec="make -j8 verilog"}
 
 [repo.atcf_fpga]
 url="https://github.com/atthecodeface/quartus.git"

@@ -1,0 +1,11 @@
+[all.grip]
+changeset = "b2d79a4cbaf43a0ef0599ea634871fe7b08b5329"
+branch = "master"
+
+[all.atcf_hardware]
+changeset = "7f7e7a5c4b0520a67d4d196f5907316a275a4496"
+branch = "master"
+
+[all.atcf_fpga]
+changeset = "b9eadb16488cce4194387b63d4143cc3ac98de72"
+branch = "master"
