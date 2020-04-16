@@ -1,7 +1,7 @@
 name="atcf_hardware_bbc"
 configs=["all"]
 default_config="all"
-base_repos=["grip","atcf_hardware"]
+base_repos=["grip", "atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_video", "atcf_hardware_bbc"]
 workflow="single"
 stages=["configure", "build_sim", "build_verilog"]
 doc="""
@@ -14,6 +14,30 @@ PATH="@ATCF_CDL_TOOLS_PATH@/cdl/build:@ATCF_CDL_TOOLS_PATH@/tools/bin:@GRIP_ROOT
 
 [config.all]
 repos=["atcf_fpga"]
+
+[repo.atcf_hardware_std]
+url="https://github.com/atthecodeface/atcf_hardware_std.git"
+branch="master"
+path="atcf_hardware_bbc"
+workflow="single"
+
+[repo.atcf_hardware_apb]
+url="https://github.com/atthecodeface/atcf_hardware_apb.git"
+branch="master"
+path="atcf_hardware_apb"
+workflow="single"
+
+[repo.atcf_hardware_video]
+url="https://github.com/atthecodeface/atcf_hardware_video.git"
+branch="master"
+path="atcf_hardware_video"
+workflow="single"
+
+[repo.atcf_hardware_bbc]
+url="https://github.com/atthecodeface/atcf_hardware_bbc.git"
+branch="master"
+path="atcf_hardware_bbc"
+workflow="single"
 
 [repo.atcf_hardware]
 url="https://github.com/atthecodeface/cdl_hardware.git"
