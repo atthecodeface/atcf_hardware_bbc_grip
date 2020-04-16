@@ -20,7 +20,7 @@ repos=["atcf_fpga"]
 [repo.atcf_hardware_std]
 url="https://github.com/atthecodeface/atcf_hardware_std.git"
 branch="master"
-path="atcf_hardware_bbc"
+path="atcf_hardware_std"
 workflow="single"
 
 [repo.atcf_hardware_apb]
