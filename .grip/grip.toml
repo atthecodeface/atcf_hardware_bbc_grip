@@ -9,6 +9,8 @@ This repository is for building, testing and running the BBC microcomputer imple
 
 It requires ATCF_CDL_TOOLS_PATH to point to an ATCF CDL tools grip directory configured with at least CDL.
 """
+logging="Yes"
+
 [env]
 PATH="@ATCF_CDL_TOOLS_PATH@/cdl/build:@ATCF_CDL_TOOLS_PATH@/tools/bin:@GRIP_ROOT_PATH@/grip:@PATH@"
 

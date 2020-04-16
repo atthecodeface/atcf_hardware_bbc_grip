@@ -9,3 +9,19 @@ branch = "master"
 [all.atcf_fpga]
 changeset = "b9eadb16488cce4194387b63d4143cc3ac98de72"
 branch = "master"
+
+[all.atcf_hardware_std]
+changeset = "11ab26b085c1c84424a1e9578934d601a502bde2"
+branch = "master"
+
+[all.atcf_hardware_apb]
+changeset = "8d6152d3ca8792f39eb952a6d7d22da72c4d80aa"
+branch = "master"
+
+[all.atcf_hardware_video]
+changeset = "e96f5cad97b0fc0c740111ca907f4d9411fef6bf"
+branch = "master"
+
+[all.atcf_hardware_bbc]
+changeset = "11ab26b085c1c84424a1e9578934d601a502bde2"
+branch = "master"
