@@ -1,18 +1,26 @@
 name="atcf_hardware_bbc"
 configs=["all"]
 default_config="all"
-base_repos=["grip", "atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_video", "atcf_hardware_bbc"]
+base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_video", "atcf_hardware_bbc"]
 workflow="single"
-stages=["configure", "build_sim", "build_verilog"]
+stages=["clean", "build", "smoke_test", "run_bbc", "run_vnc_rfb"]
 doc="""
 This repository is for building, testing and running the BBC microcomputer implementation in CDL
 
-It requires ATCF_CDL_TOOLS_PATH to point to an ATCF CDL tools grip directory configured with at least CDL.
+It requires ATCF_CDL_TOOLS_PATH to point to an ATCF CDL tools grip directory configured with at least grip and CDL.
+Hence $(ATCF_CDL_TOOLS_PATH)/tools/bin/cdl will be the cdl tool, and $(ATCF_CDL_TOOLS_PATH)/grip/grip will be the grip tool.
+
+To build and run the BBC simulation, use:
+  grip make run_bbc
+
+To run the VNC RFB use:
+  grip make run_vnc_rfb
 """
 logging="Yes"
 
 [env]
-PATH="@ATCF_CDL_TOOLS_PATH@/cdl/build:@ATCF_CDL_TOOLS_PATH@/tools/bin:@GRIP_ROOT_PATH@/grip:@PATH@"
+PATH="@ATCF_CDL_TOOLS_PATH@/bin:@ATCF_CDL_TOOLS_PATH@/grip:@PATH@"
+BUILD_DIR="@GRIP_ROOT_PATH@/build"
 
 [config.all]
 repos=["atcf_fpga"]
@@ -28,6 +36,7 @@ url="https://github.com/atthecodeface/atcf_hardware_apb.git"
 branch="master"
 path="atcf_hardware_apb"
 workflow="single"
+smoke_test.satisfies="smoke_test"
 
 [repo.atcf_hardware_video]
 url="https://github.com/atthecodeface/atcf_hardware_video.git"
@@ -40,6 +49,8 @@ url="https://github.com/atthecodeface/atcf_hardware_bbc.git"
 branch="master"
 path="atcf_hardware_bbc"
 workflow="single"
+clean_sim.satisfies="clean"
+build_sim.satisfies="build"
 
 [repo.atcf_hardware]
 url="https://github.com/atthecodeface/cdl_hardware.git"
