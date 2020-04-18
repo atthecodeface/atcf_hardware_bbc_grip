@@ -23,5 +23,5 @@ changeset = "cfa3c669018027cfe206478105b162c2b9807ef0"
 branch = "master"
 
 [all.atcf_hardware_bbc]
-changeset = "b6dc22d0181029629a468bc3dd60f39cb4464179"
+changeset = "6c90fda398c576a17e551b4fd651e32ddbe28fb5"
 branch = "master"

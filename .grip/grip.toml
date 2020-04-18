@@ -19,8 +19,9 @@ To run the VNC RFB use:
 logging="Yes"
 
 [env]
-PATH="@ATCF_CDL_TOOLS_PATH@/bin:@ATCF_CDL_TOOLS_PATH@/grip:@PATH@"
+PATH="@ATCF_CDL_TOOLS_PATH@/tools/bin:@ATCF_CDL_TOOLS_PATH@/grip:@PATH@"
 BUILD_DIR="@GRIP_ROOT_PATH@/build"
+ATCF_CDL_TOOLS_PATH="@ATCF_CDL_TOOLS_PATH@"
 
 [config.all]
 repos=["atcf_fpga"]
