@@ -22,6 +22,7 @@ logging="Yes"
 PATH="@ATCF_CDL_TOOLS_PATH@/tools/bin:@ATCF_CDL_TOOLS_PATH@/grip:@PATH@"
 BUILD_DIR="@GRIP_ROOT_PATH@/build"
 ATCF_CDL_TOOLS_PATH="@ATCF_CDL_TOOLS_PATH@"
+VERILATOR_ROOT="@ATCF_CDL_TOOLS_PATH@/tools/share/verilator"
 
 [config.all]
 repos=["atcf_fpga"]
