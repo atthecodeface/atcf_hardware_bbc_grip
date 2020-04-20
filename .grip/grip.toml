@@ -1,7 +1,7 @@
 name="atcf_hardware_bbc"
 configs=["all"]
 default_config="all"
-base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_video", "atcf_hardware_io", "atcf_hardware_de1", "atcf_hardware_bbc"]
+base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_utils", "atcf_hardware_video", "atcf_hardware_io", "atcf_hardware_de1", "atcf_hardware_bbc"]
 workflow="single"
 stages=["clean", "build", "smoke_test", "run_bbc", "run_vnc_rfb"]
 doc="""
@@ -35,6 +35,12 @@ branch="master"
 path="atcf_hardware_std"
 workflow="single"
 
+[repo.atcf_hardware_utils]
+url="https://github.com/atthecodeface/atcf_hardware_utils.git"
+branch="master"
+path="atcf_hardware_utils"
+workflow="single"
+
 [repo.atcf_hardware_apb]
 url="https://github.com/atthecodeface/atcf_hardware_apb.git"
 branch="master"
@@ -49,13 +55,13 @@ path="atcf_hardware_video"
 workflow="single"
 
 [repo.atcf_hardware_io]
-url="https://github.com/atthecodeface/atcf_hardware_video.git"
+url="https://github.com/atthecodeface/atcf_hardware_io.git"
 branch="master"
 path="atcf_hardware_io"
 workflow="single"
 
 [repo.atcf_hardware_de1]
-url="https://github.com/atthecodeface/atcf_hardware_video.git"
+url="https://github.com/atthecodeface/atcf_hardware_de1.git"
 branch="master"
 path="atcf_hardware_de1"
 workflow="single"
