@@ -1,7 +1,7 @@
 name="atcf_hardware_bbc"
 configs=["all"]
 default_config="all"
-base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_video", "atcf_hardware_bbc"]
+base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_video", "atcf_hardware_io", "atcf_hardware_de1", "atcf_hardware_bbc"]
 workflow="single"
 stages=["clean", "build", "smoke_test", "run_bbc", "run_vnc_rfb"]
 doc="""
@@ -22,7 +22,9 @@ logging="Yes"
 PATH="@ATCF_CDL_TOOLS_PATH@/tools/bin:@ATCF_CDL_TOOLS_PATH@/grip:@PATH@"
 BUILD_DIR="@GRIP_ROOT_PATH@/build"
 ATCF_CDL_TOOLS_PATH="@ATCF_CDL_TOOLS_PATH@"
-VERILATOR_ROOT="@ATCF_CDL_TOOLS_PATH@/tools/share/verilator"
+CDL_ROOT="@ATCF_CDL_TOOLS_PATH@/tools"
+VERILATOR_ROOT="@ATCF_CDL_TOOLS_PATH@/tools"
+VERILATOR_SHARE="@ATCF_CDL_TOOLS_PATH@/tools/share/verilator"
 
 [config.all]
 repos=["atcf_fpga"]
@@ -44,6 +46,18 @@ smoke_test.satisfies="smoke_test"
 url="https://github.com/atthecodeface/atcf_hardware_video.git"
 branch="master"
 path="atcf_hardware_video"
+workflow="single"
+
+[repo.atcf_hardware_io]
+url="https://github.com/atthecodeface/atcf_hardware_video.git"
+branch="master"
+path="atcf_hardware_io"
+workflow="single"
+
+[repo.atcf_hardware_de1]
+url="https://github.com/atthecodeface/atcf_hardware_video.git"
+branch="master"
+path="atcf_hardware_de1"
 workflow="single"
 
 [repo.atcf_hardware_bbc]
