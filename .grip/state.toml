@@ -7,7 +7,7 @@ changeset = "7f7e7a5c4b0520a67d4d196f5907316a275a4496"
 branch = "master"
 
 [all.atcf_fpga]
-changeset = "4bdf07d265dd0151afda2f19545ff8dc09151b9a"
+changeset = "f39b6e097a33bb39f9b9f3fee3af83f7d213c2f6"
 branch = "master"
 
 [all.atcf_hardware_std]
@@ -23,7 +23,7 @@ changeset = "861ac8457a206cb59f7e3647cd73dd0f62d66b7f"
 branch = "master"
 
 [all.atcf_hardware_bbc]
-changeset = "3538d2ffb5452ea342c102fcde56b37236c47130"
+changeset = "74233732e43f2fa449f586644b3d570ce954adb2"
 branch = "master"
 
 [all.atcf_hardware_io]
