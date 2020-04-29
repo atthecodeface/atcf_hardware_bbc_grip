@@ -23,7 +23,7 @@ changeset = "861ac8457a206cb59f7e3647cd73dd0f62d66b7f"
 branch = "master"
 
 [all.atcf_hardware_bbc]
-changeset = "74233732e43f2fa449f586644b3d570ce954adb2"
+changeset = "d54890293e45950f2ee646e1fbf74ae24b849068"
 branch = "master"
 
 [all.atcf_hardware_io]
