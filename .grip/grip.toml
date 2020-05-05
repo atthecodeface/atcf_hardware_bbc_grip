@@ -3,7 +3,7 @@ configs=["all"]
 default_config="all"
 base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_utils", "atcf_hardware_video", "atcf_hardware_io", "atcf_hardware_de1", "atcf_hardware_bbc"]
 workflow="single"
-stages=["clean", "build", "smoke_test", "run_bbc", "run_vnc_rfb"]
+stages=["clean", "build", "smoke_test"]
 doc="""
 This repository is for building, testing and running the BBC microcomputer implementation in CDL
 
@@ -28,6 +28,29 @@ VERILATOR_SHARE="@ATCF_CDL_TOOLS_PATH@/tools/share/verilator"
 
 [config.all]
 repos=["atcf_fpga"]
+
+[config.all.env]
+
+[config.all.stage.clean_all_sim]
+env.SRC_ROOT     = "@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils"
+env.MAKE_OPTIONS = "-f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT='@SRC_ROOT@' BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg'"
+exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make @MAKE_OPTIONS@ clean"
+
+[config.all.stage.build]
+requires=["clean_all_sim"]
+env.SRC_ROOT     = "@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils"
+env.MAKE_OPTIONS = "-f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT='@SRC_ROOT@' BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg'"
+wd="@BUILD_DIR@"
+exec="make @MAKE_OPTIONS@ -j8 all"
+
+[config.all.stage.smoke]
+action="yes"
+
+[config.all.stage.run_bbc]
+action="yes"
+
+[config.all.stage.run_vnc_rfb]
+action="yes"
 
 [repo.atcf_hardware_std]
 url="https://github.com/atthecodeface/atcf_hardware_std.git"
@@ -73,6 +96,8 @@ path="atcf_hardware_bbc"
 workflow="single"
 clean_sim.satisfies="clean"
 build_sim.satisfies="build"
+run_bbc.satisfies="run_bbc"
+run_vnc_rfb.satisfies="run_vnc_rfb"
 
 [repo.atcf_hardware]
 url="https://github.com/atthecodeface/cdl_hardware.git"
