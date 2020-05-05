@@ -3,7 +3,7 @@ configs=["all"]
 default_config="all"
 base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_utils", "atcf_hardware_video", "atcf_hardware_io", "atcf_hardware_de1", "atcf_hardware_bbc"]
 workflow="single"
-stages=["clean", "build", "smoke_test"]
+stages=["clean", "build", "smoke"]
 doc="""
 This repository is for building, testing and running the BBC microcomputer implementation in CDL
 
@@ -63,19 +63,21 @@ url="https://github.com/atthecodeface/atcf_hardware_utils.git"
 branch="master"
 path="atcf_hardware_utils"
 workflow="single"
+smoke_test.satisfies="smoke"
 
 [repo.atcf_hardware_apb]
 url="https://github.com/atthecodeface/atcf_hardware_apb.git"
 branch="master"
 path="atcf_hardware_apb"
 workflow="single"
-smoke_test.satisfies="smoke_test"
+smoke_test.satisfies="smoke"
 
 [repo.atcf_hardware_video]
 url="https://github.com/atthecodeface/atcf_hardware_video.git"
 branch="master"
 path="atcf_hardware_video"
 workflow="single"
+smoke_test.satisfies="smoke"
 
 [repo.atcf_hardware_io]
 url="https://github.com/atthecodeface/atcf_hardware_io.git"
@@ -98,6 +100,7 @@ clean_sim.satisfies="clean"
 build_sim.satisfies="build"
 run_bbc.satisfies="run_bbc"
 run_vnc_rfb.satisfies="run_vnc_rfb"
+smoke_test.satisfies="smoke"
 
 [repo.atcf_hardware]
 url="https://github.com/atthecodeface/cdl_hardware.git"
