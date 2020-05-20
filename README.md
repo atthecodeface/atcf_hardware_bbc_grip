@@ -81,11 +81,9 @@ subrepositories contain what is required.
 The following assumes *grip* and *cdl* are on the PATH for the shell.
 
 ```
-export ATCF_CDL_TOOLS_PATH=<where_to_put_stuff>/cdl_tools_grip/tools
+export ATCF_CDL_TOOLS_PATH=<where_to_put_stuff>/cdl_tools_grip
 cd <where_to_put_stuff>
-git clone  https://github.com/atthecodeface/atcf_hardware_bbc_grip.git
-cd atcf_hardware_bbc_grip
-grip configure
+grip checkout  https://github.com/atthecodeface/atcf_hardware_bbc_grip.git
 ```
 
 # Using the repository
@@ -96,9 +94,9 @@ targets, for example) is to use a grip shell.
 The following assumes *grip* and *cdl* are on the PATH for the shell.
 
 ```
-export ATCF_CDL_TOOLS_PATH=<where_to_put_stuff>/cdl_tools_grip/tools
 cd <where_to_put_stuff>/atcf_hardware_bbc_grip
 grip shell
+grip make clean
 ```
 
 This invokes a bash shell in which commands can be executed.

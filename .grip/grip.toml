@@ -19,9 +19,11 @@ To run the VNC RFB use:
 logging="Yes"
 
 [env]
+# The next line forces ATCF_CDL_TOOLS_PATH into the grip shell environment - and it must be supplied for configure
+ATCF_CDL_TOOLS_PATH="@ATCF_CDL_TOOLS_PATH@"
+# Having PATH here forces path in to the grip shell environment setting, based of the *current* path given it uses @PATH@
 PATH="@ATCF_CDL_TOOLS_PATH@/tools/bin:@ATCF_CDL_TOOLS_PATH@/grip:@PATH@"
 BUILD_DIR="@GRIP_ROOT_PATH@/build"
-ATCF_CDL_TOOLS_PATH="@ATCF_CDL_TOOLS_PATH@"
 CDL_ROOT="@ATCF_CDL_TOOLS_PATH@/tools"
 VERILATOR_ROOT="@ATCF_CDL_TOOLS_PATH@/tools"
 VERILATOR_SHARE="@ATCF_CDL_TOOLS_PATH@/tools/share/verilator"
