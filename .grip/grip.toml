@@ -38,12 +38,16 @@ env.SRC_ROOT     = "@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_har
 env.MAKE_OPTIONS = "-f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT='@SRC_ROOT@' BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg'"
 exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make @MAKE_OPTIONS@ clean"
 
+[config.all.stage.do_clean]
+env.SRC_ROOT     = "'@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils'"
+exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make -f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT=@SRC_ROOT@ BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg' clean"
+action="yes"
+
 [config.all.stage.build]
-requires=["clean_all_sim"]
-env.SRC_ROOT     = "@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils"
-env.MAKE_OPTIONS = "-f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT='@SRC_ROOT@' BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg'"
+# requires=["clean_all_sim"]
+env.SRC_ROOT     = "'@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils'"
 wd="@BUILD_DIR@"
-exec="make @MAKE_OPTIONS@ -j8 all"
+exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make -f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT=@SRC_ROOT@ BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg' -j8 all"
 
 [config.all.stage.smoke]
 action="yes"

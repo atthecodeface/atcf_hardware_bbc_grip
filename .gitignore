@@ -1,5 +1,11 @@
 *~
 .grip/local*
 atcf_fpga
-atcf_hardware
-grip
+atcf_hardware_std
+atcf_hardware_utils
+atcf_hardware_apb
+atcf_hardware_video
+atcf_hardware_de1
+atcf_hardware_io
+atcf_hardware_bbc
+build
