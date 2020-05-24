@@ -15,7 +15,7 @@ changeset = "11c224d6eebed9c3f763607084bce797e7e242ab"
 branch = "master"
 
 [all.atcf_hardware_apb]
-changeset = "811c8c93675ee9ddab94656874ef07e43c5228f0"
+changeset = "24a49efed518d68eec2fa0b10306e19c3e70b92f"
 branch = "master"
 
 [all.atcf_hardware_video]
