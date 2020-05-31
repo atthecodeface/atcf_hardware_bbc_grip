@@ -15,11 +15,11 @@ changeset = "bcd1b9a0a17f4a5f626055b0dd2041ad23c122d9"
 branch = "master"
 
 [all.atcf_hardware_apb]
-changeset = "e3b57a1d205b02930379cea0aebd8f4de25376e9"
+changeset = "d8d036597810196cd6b352de1ca2412ac9fca1fe"
 branch = "master"
 
 [all.atcf_hardware_video]
-changeset = "75bfbfe0399aa6c77f6e6b932f30293936073ac9"
+changeset = "b398b75dad07939a4bb44af1bdc95f3c2eb57115"
 branch = "master"
 
 [all.atcf_hardware_bbc]
@@ -27,7 +27,7 @@ changeset = "7b902d2773cfaa723daa51d8e6ce94967cb0a149"
 branch = "master"
 
 [all.atcf_hardware_io]
-changeset = "aded6897058b22f7e4565c1c5b4ce9c34fd398a0"
+changeset = "37f179a7e8bcfef467ea9721bdb9b1355ad4d201"
 branch = "master"
 
 [all.atcf_hardware_de1]
@@ -35,5 +35,5 @@ changeset = "4f2896bf5974b3c49eacd11f19147f0932de5cab"
 branch = "master"
 
 [all.atcf_hardware_utils]
-changeset = "15caceafe64e099c0b1538354c858f89b1350b8c"
+changeset = "2647ae2daafce8a8d8f2b4211382072651de0f51"
 branch = "master"
