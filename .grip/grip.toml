@@ -3,7 +3,7 @@ configs=["all"]
 default_config="all"
 base_repos=["atcf_hardware_std", "atcf_hardware_apb", "atcf_hardware_utils", "atcf_hardware_video", "atcf_hardware_io", "atcf_hardware_de1", "atcf_hardware_bbc"]
 workflow="single"
-stages=["clean", "build", "smoke"]
+stages=["clean", "build", "build_verilog", "smoke_test", "regress"]
 doc="""
 This repository is for building, testing and running the BBC microcomputer implementation in CDL
 
