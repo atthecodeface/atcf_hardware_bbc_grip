@@ -23,7 +23,7 @@ changeset = "b398b75dad07939a4bb44af1bdc95f3c2eb57115"
 branch = "master"
 
 [all.atcf_hardware_bbc]
-changeset = "7b902d2773cfaa723daa51d8e6ce94967cb0a149"
+changeset = "5e0f04e4757e9b38113697a120069b82e92a6733"
 branch = "master"
 
 [all.atcf_hardware_io]
@@ -35,5 +35,5 @@ changeset = "4f2896bf5974b3c49eacd11f19147f0932de5cab"
 branch = "master"
 
 [all.atcf_hardware_utils]
-changeset = "15ee0a8196f181a1739214cf4df53ddd9a24e7e4"
+changeset = "42c038d7e58d9384bd1dbcc75e040e8fe8b05c15"
 branch = "master"
