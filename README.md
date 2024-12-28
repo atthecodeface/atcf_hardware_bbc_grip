@@ -30,9 +30,11 @@ and configured, all is set up.
 The process assumes Ubuntu 16.04/18.04 (or similar) or OSX, with
 appropriate packages.
 
-The system packages required include: python3 automake
+The system packages required include: python3 automake texinfo
 
-Python3 packages required include: toml
+For images: libpng libjpeg
+
+Python3 packages required include: toml mypy
 
 ### Get grip
 
@@ -49,10 +51,10 @@ git clone  https://github.com/atthecodeface/grip.git
 
 ### Get and build CDL tools
 
-The CDL tools grip repository, which is a github repo. It does not contain
-the source for any tools - it is a grip repository whose git
-subrepositories provide the tools or mechanisms for building the
-tools.
+Get and build the CDL tools grip repository (which is a github
+repo). It does not contain the source for any tools - it is a grip
+repository whose git subrepositories provide the tools or mechanisms
+for building the tools.
 
 ```
 cd <where_to_put_stuff>
@@ -74,8 +76,8 @@ hence it is that step that grip ensures happens first.
 
 ### Get and set up atcf_hardware_bbc_grip
 
-This is a grip repository, which is a github repo. It does not contain
-the hardware descriptions or the source for any tools - the
+This is again a grip repository, which is a github repo. It does not
+contain the hardware descriptions or the source for any tools - the
 subrepositories contain what is required.
 
 The following assumes *grip* and *cdl* are on the PATH for the shell.
@@ -84,6 +86,14 @@ The following assumes *grip* and *cdl* are on the PATH for the shell.
 export ATCF_CDL_TOOLS_PATH=<where_to_put_stuff>/cdl_tools_grip
 cd <where_to_put_stuff>
 grip checkout  https://github.com/atthecodeface/atcf_hardware_bbc_grip.git
+```
+
+```
+cd <where_to_put_stuff>
+export ATCF_CDL_TOOLS_PATH=<where_to_put_stuff>/cdl_tools_grip
+git clone https://github.com/atthecodeface/atcf_hardware_bbc_grip.git
+cd atcf_hardware_bbc_grip
+grip configure
 ```
 
 # Using the repository
