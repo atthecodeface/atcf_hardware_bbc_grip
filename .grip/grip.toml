@@ -25,8 +25,10 @@ ATCF_CDL_TOOLS_PATH="@ATCF_CDL_TOOLS_PATH@"
 PATH="@ATCF_CDL_TOOLS_PATH@/tools/bin:@ATCF_CDL_TOOLS_PATH@/grip:@PATH@"
 BUILD_DIR="@GRIP_ROOT_PATH@/build"
 CDL_ROOT="@ATCF_CDL_TOOLS_PATH@/tools"
-VERILATOR_ROOT="@ATCF_CDL_TOOLS_PATH@/tools"
+# As of 2024, Verilator DOES NOT want VERILATOR_ROOT set.
+# VERILATOR_ROOT="@ATCF_CDL_TOOLS_PATH@/tools"
 VERILATOR_SHARE="@ATCF_CDL_TOOLS_PATH@/tools/share/verilator"
+LDFLAGS='-lpng -ljpeg'
 
 [config.all]
 repos=["atcf_fpga"]
@@ -34,20 +36,20 @@ repos=["atcf_fpga"]
 [config.all.env]
 
 [config.all.stage.clean_all_sim]
-env.SRC_ROOT     = "@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils"
-env.MAKE_OPTIONS = "-f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT='@SRC_ROOT@' BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg'"
+env.SRC_ROOT     = "@GRIP_ROOT_PATH@/atcf_hardware_bbc"
+env.MAKE_OPTIONS = "-f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT='@SRC_ROOT@' BUILD_ROOT=@BUILD_DIR@"
 exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make @MAKE_OPTIONS@ clean"
 
 [config.all.stage.do_clean]
-env.SRC_ROOT     = "'@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils'"
-exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make -f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT=@SRC_ROOT@ BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg' clean"
+env.SRC_ROOT     = "'@GRIP_ROOT_PATH@/atcf_hardware_bbc'"
+exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make -f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT=@SRC_ROOT@ BUILD_ROOT=@BUILD_DIR@clean"
 action="yes"
 
 [config.all.stage.build]
 # requires=["clean_all_sim"]
-env.SRC_ROOT     = "'@GRIP_ROOT_PATH@/atcf_hardware_bbc @GRIP_ROOT_PATH@/atcf_hardware_utils'"
+env.SRC_ROOT     = "'@GRIP_ROOT_PATH@/atcf_hardware_bbc'"
 wd="@BUILD_DIR@"
-exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make -f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT=@SRC_ROOT@ BUILD_ROOT=@BUILD_DIR@  LDFLAGS='-lpng -ljpeg' -j8 all"
+exec="mkdir -p @BUILD_DIR@ && cd @BUILD_DIR@ && make -f @GRIP_ROOT_PATH@/atcf_hardware_video/Makefile SRC_ROOT=@SRC_ROOT@ BUILD_ROOT=@BUILD_DIR@ -j8 all"
 
 [config.all.stage.smoke]
 action="yes"
